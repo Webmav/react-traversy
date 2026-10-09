@@ -13,7 +13,7 @@ import ViewAllJobs from './assets/components/ViewAllJobs';
 
 import MainLayout from './assets/layouts/MainLayout';
 import JobsPage from './assets/pages/JobsPage';
-
+import NotFoundPage from './assets/pages/NotFoundPage';
 
 export default function App() {
   return(
@@ -22,6 +22,7 @@ export default function App() {
         <Route path='/' element={<MainLayout />}>
           <Route path='/' element={<HomePage />} />
           <Route path='/jobs' element={<JobsPage />} />
+          <Route path='*' element={<NotFoundPage />} />
         </Route>
       </Routes>
     </Router>
