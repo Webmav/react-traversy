@@ -4,16 +4,11 @@ import {
   Routes,
 } from 'react-router-dom';
 
-import HomePage from './assets/pages/HomePage'
-
-import Navbar from './assets/components/NavBar';
-import HomeCards from './assets/components/HomeCards';
-import JobListings from './assets/components/JobListings';
-import ViewAllJobs from './assets/components/ViewAllJobs';
-
 import MainLayout from './assets/layouts/MainLayout';
+import HomePage from './assets/pages/HomePage'
 import JobsPage from './assets/pages/JobsPage';
 import NotFoundPage from './assets/pages/NotFoundPage';
+import JobPage from './assets/pages/JobPage';
 
 export default function App() {
   return(
