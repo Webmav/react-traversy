@@ -11,7 +11,7 @@ export default function JobListings({ isHome = false }) {
       const apiUrl = isHome 
         ? '/api/jobs?_page=1&_per_page=3' 
         : "/api/jobs";
-    try{
+      try{
         const res = await fetch(apiUrl);
         const data = await res.json();
         const finalData = data.data;
