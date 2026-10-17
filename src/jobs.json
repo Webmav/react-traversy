@@ -83,20 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "title": "agdfhsgdjhg",
-      "type": "Part-Time",
-      "location": "asdhgfjg",
-      "description": "asdfdgshgg",
-      "salary": "Under $50K",
-      "company": {
-        "name": "afsfdhgjk",
-        "description": "fasfgdhfjghk",
-        "contactEmail": "afdgdsh@asdfghg",
-        "contactPhone": "adsgfhghf"
-      },
-      "id": "Z-__FPAov1M"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

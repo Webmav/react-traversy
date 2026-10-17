@@ -14,7 +14,8 @@ import Spinners from './assets/components/Spinners';
 import AddJobPage from './assets/pages/AddJobPage';
 
 export default function App() {
-  async function jobSubmit(newJob) {
+  //Add Job
+  async function addJob(newJob) {
     const res = await fetch("/api/jobs", {
       method: 'POST',
       headers: {
@@ -25,13 +26,21 @@ export default function App() {
     return;
   }
 
+  //Delete Job
+  async function deleteJob(id) {
+    const res = await fetch(`/api/jobs/${id}`, {
+      method: 'DELETE',
+    });
+    return;
+  }
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<MainLayout />}>
         <Route path='/' element={<HomePage />} />
         <Route path='/jobs' element={<JobsPage />} />
-        <Route path='/add-job' element={<AddJobPage addJobSubmit={jobSubmit} />} />
-        <Route path='/jobs/:id' element={<JobPage />} loader={JobLoader}/>
+        <Route path='/add-job' element={<AddJobPage addJobSubmit={ addJob } />} />
+        <Route path='/jobs/:id' element={<JobPage deleteJob={ deleteJob } />} loader={JobLoader}/>
         <Route path='*' element={<NotFoundPage />} />
       </Route>
     )
