@@ -33,7 +33,7 @@ const AddJobPage = ({ addJobSubmit }) => {
         }
         addJobSubmit(newJob)
 
-        toast.success("Joblisting added successfully.")
+        toast.success("Job added successfully.")
 
         navigate('/jobs')
     }

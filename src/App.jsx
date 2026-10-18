@@ -12,6 +12,7 @@ import NotFoundPage from './assets/pages/NotFoundPage';
 import JobPage, {JobLoader} from './assets/pages/JobPage';
 import Spinners from './assets/components/Spinners';
 import AddJobPage from './assets/pages/AddJobPage';
+import EditJobPage from './assets/pages/EditJobPage';
 
 export default function App() {
   //Add Job
@@ -34,12 +35,25 @@ export default function App() {
     return;
   }
 
+  //Update Job
+  async function updateJob(job) {
+    const res = await fetch(`/api/jobs/${job.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify(newJob)
+    });
+    return;
+  }
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<MainLayout />}>
         <Route path='/' element={<HomePage />} />
         <Route path='/jobs' element={<JobsPage />} />
         <Route path='/add-job' element={<AddJobPage addJobSubmit={ addJob } />} />
+        <Route path='/edit-jobs/:id' element={<EditJobPage updateJobSubmit={ updateJob }/>} loader={JobLoader}/>
         <Route path='/jobs/:id' element={<JobPage deleteJob={ deleteJob } />} loader={JobLoader}/>
         <Route path='*' element={<NotFoundPage />} />
       </Route>
